@@ -1,6 +1,14 @@
 class Rental:
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.__name = name
+        self.__branches = []
+        
+    def add_branch(self, branch):
+        self.__branches.append(branch)
+        
+    def list_branches(self):
+        for branch in self.__branches:
+            print(branch.show_branches())
     
 class Worker:
     def __init__(self, name, cpf, age, function):
@@ -16,6 +24,9 @@ class Branch:
         self.__clients = []
         self.__vehicles = []
         self.__workers = []
+        
+    def show_branches(self):
+        return f"{self.__name}, {self.__location}"
         
     def add_vehicle(self, vehicle):
         self.__vehicles.append(vehicle)
@@ -44,8 +55,8 @@ class Vehicle:
 
 class Location:
     def __init__(self, time, price, client, status):
-        self.__time
-        self.__price
+        self.__time 
+        self.__price 
         self.__client
         self.__status
         
@@ -54,12 +65,21 @@ class WaitList:
         self.__
         
 
+supercars = Rental("Supercars")
+
 branch1 = Branch("Filial Central", "Rua das Alamedas, 123")
+
+supercars.add_branch(branch1)
+
+supercars.list_branches()
 
 
 supra1 = Vehicle("Toyota", "br1", "Supra Mk4", 1995, 20, 5)
 celta1 = Vehicle("Chevrolet", "br2", "Celta", 2011, 20, 2)
+altima = Vehicle("Nissan", "Br3", "Altima", 2025, 30, 2)
 branch1.add_vehicle(celta1)
 branch1.add_vehicle(supra1)
+branch1.add_vehicle(altima)
 
-branch1.list_vehicles()
+branch1.list_vehicles() 
+
