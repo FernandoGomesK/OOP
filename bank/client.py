@@ -20,9 +20,3 @@ class Client:
     def age(self, value):
         self.__age = value
     
-fernando = Client("Fernando", "18")
-print(f"my name is {fernando.name}, and i am {fernando.age} years old") 
-
-fernando.age = "19"
-
-print(f"my name is {fernando.name}, and i am {fernando.age} years old")
