@@ -33,11 +33,10 @@ class Vehicles:
         self.__mileage_price = mileage_price
         
 class Location:
-    def __init__(self):
+    def __init__(self, time, price, client, status):
         self.__time
         self.__price
         self.__client
-        self.__client
         self.__status
         
-supra1 = Vehicles("Toyota", "br1", "Supra Mk4", "1995", 20, 5 )
+supra1 = Vehicles("Toyota", "br1", "Supra Mk4", 1995, 20, 5 )
