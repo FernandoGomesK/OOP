@@ -1,6 +1,7 @@
 class Rental:
-    def __init__(self):
-        pass
+    def __init__(self, branch):
+        self.__branch = []
+        
     
 class Worker:
     def __init__(self, name, cpf, age, function):
