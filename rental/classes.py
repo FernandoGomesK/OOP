@@ -67,6 +67,10 @@ class Vehicle:
         
     def car_info(self):
         return f"{self.__brand} {self.__model} ({self.__year}) plate: {self.__plate}"
+    
+    def Car(Vehicle):
+        def __init__(self, type):
+            pass
 
 class Location:
     def __init__(self, client, vehicle, start_date, end_date):
@@ -76,7 +80,6 @@ class Location:
         self.__end_date = datetime.strptime(end_date, "%d-%m-%Y")
         self.__total_days = (self.__end_date - self.__start_date). days + 1 
         self.__price = self.price_calculation()
-        self.__status = "active"
         
         
         
@@ -100,6 +103,7 @@ class WaitList:
         
 
 supercars = Rental("Supercars")
+
 
 branch1 = Branch("Filial Central", "Rua das Alamedas, 123")
 
