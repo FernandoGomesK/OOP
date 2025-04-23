@@ -43,7 +43,15 @@ class Bank:
         self._phone = value
         
     def add_branch(self, branch: 'Branch'):
-        self._branch.append(branch)
+        if isinstance(branch, Branch):
+            self._branch.append(branch)
+            print("Branch added successfully")
+        else:
+            raise ValueError("The following is not a branch")
+        
+    def show_branches(self):
+        for branch in self._branch:
+            print(f"Branch: {branch.name}")
 class Branch:
     def __init__(self, number: str, name: str, location: str, phone: str):
         self._number = number
@@ -287,12 +295,17 @@ class Savings_account(Account, Earning):
     def get_Earning(self):
         pass
     
-        
+
+
+
 account1 = Current_account("123", "123", 100.0, "123", 50.0)
 account1.withdraw(20.0)
 
-bank1 = Bank("Bankzao", "123", "Izidoro", "123123")
-agency1 = Branch("1", "agency1", "Izidoro2", "123321")
- 
+bank1 = Bank("bank1", "123", "123", "123")
+agency1 = Branch("1", "agency on izidoro", "Izidoro2", "123321")
+agency2 = Branch("3", "branch on vioção", "143", "1111111")
 bank1.add_branch(agency1)
+bank1.add_branch(agency2)
+bank1.show_branches()
+
 
